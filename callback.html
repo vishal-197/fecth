@@ -1,0 +1,59 @@
+<!-- callback ke function hota h jo kiese function se ander define hota h, bhar wala funcion jb use chlata h to use call back function hota h
+what is prosimese =.> is an object which 
+
+pending 
+fulfile
+resolve
+c -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="data">
+
+    </div>
+
+
+
+  <script>
+
+    fetch ("https://randomuser.me/api")
+    .then((response)=>{return response.json()})
+    .then((result)=> {
+        console.log(result);
+        data(result)
+           
+        })
+
+    function data(x){
+        const image = document.createElement("img");
+        image.src = x.results[0].picture.large;
+        
+        const name= document.createElement("h2");
+        name.innerHTML = x.results[0].name.first+ " "+ x.results[0].name.last;
+
+        // document.querySelector("#data")
+       
+
+        const email = document.createElement("p");
+        email.innerHTML = x.results[0].email
+
+        document.querySelector("#data").append(image)
+        document.querySelector("#data").append(name)
+        document.querySelector("#data").append(email)
+
+    }
+    
+
+
+  </script>  
+    
+</body>
+</html>
